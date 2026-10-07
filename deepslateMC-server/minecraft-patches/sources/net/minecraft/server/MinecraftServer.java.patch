@@ -1,6 +1,6 @@
 --- a/net/minecraft/server/MinecraftServer.java
 +++ b/net/minecraft/server/MinecraftServer.java
-@@ -1365,6 +_,7 @@
+@@ -1367,6 +_,7 @@
              org.spigotmc.WatchdogThread.hasStarted = true; // Paper
              org.dreeam.leaf.config.LeafConfig.regSparkExtraConfig(); // Leaf - Leaf config
              net.minecraft.world.level.block.Blocks.initPathType(); // Leaf - Cache block state tags
