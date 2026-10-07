@@ -1,6 +1,6 @@
 --- a/net/minecraft/network/protocol/game/ClientboundPlayerInfoUpdatePacket.java
 +++ b/net/minecraft/network/protocol/game/ClientboundPlayerInfoUpdatePacket.java
-@@ -225,7 +_,7 @@
+@@ -244,7 +_,7 @@
          // Paper end - Add Listing API for Player
                  player.getUUID(),
                  player.getGameProfile(),

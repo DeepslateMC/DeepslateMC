@@ -1,6 +1,6 @@
 --- a/net/minecraft/server/MinecraftServer.java
 +++ b/net/minecraft/server/MinecraftServer.java
-@@ -1367,6 +_,7 @@
+@@ -1350,6 +_,7 @@
              org.spigotmc.WatchdogThread.hasStarted = true; // Paper
              org.dreeam.leaf.config.LeafConfig.regSparkExtraConfig(); // Leaf - Leaf config
              net.minecraft.world.level.block.Blocks.initPathType(); // Leaf - Cache block state tags
@@ -8,9 +8,9 @@
              // Paper start - Add onboarding message for initial server start
              if (io.papermc.paper.configuration.GlobalConfiguration.isFirstStart) {
                  LOGGER.info("*************************************************************************************");
-@@ -1846,6 +_,19 @@
+@@ -1820,6 +_,19 @@
      private ServerStatus.Players buildPlayerStatus() {
-         List<ServerPlayer> players = this.playerList.realPlayers; // Leaves - only real player
+         List<ServerPlayer> players = this.playerList.getPlayers();
          int maxPlayers = this.getMaxPlayers();
 +
 +        // Deepslate start - Custom playerlist hover text
@@ -28,7 +28,7 @@
          if (this.hidesOnlinePlayers()) {
              return new ServerStatus.Players(maxPlayers, players.size(), List.of());
          }
-@@ -2271,12 +_,29 @@
+@@ -2249,12 +_,29 @@
  
      @Override
      public String getMotd() {
