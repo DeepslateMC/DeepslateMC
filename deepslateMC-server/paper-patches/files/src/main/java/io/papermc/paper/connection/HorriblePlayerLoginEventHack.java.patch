@@ -1,6 +1,6 @@
 --- a/src/main/java/io/papermc/paper/connection/HorriblePlayerLoginEventHack.java
 +++ b/src/main/java/io/papermc/paper/connection/HorriblePlayerLoginEventHack.java
-@@ -47,12 +_,17 @@
+@@ -48,12 +_,17 @@
      }
  
      public static @Nullable Component execute(final Connection connection, MinecraftServer server, GameProfile profile, PlayerList.LoginResult result) {
@@ -19,8 +19,8 @@
              for (final RegisteredListener listener : PlayerLoginEvent.getHandlerList().getRegisteredListeners()) {
                  plugins.add(listener.getPlugin().getName());
              }
-@@ -89,6 +_,16 @@
-         PlayerLoginEvent event = new PlayerLoginEvent(horribleBukkitPlayer, connection.hostname, ((java.net.InetSocketAddress) connection.getRemoteAddress()).getAddress(), ((java.net.InetSocketAddress) connection.channel.remoteAddress()).getAddress());
+@@ -90,6 +_,16 @@
+         PlayerLoginEvent event = new PlayerLoginEvent(horribleBukkitPlayer, connection.hostname, ((java.net.InetSocketAddress) connection.getRemoteAddress()).getAddress(), connection.channel.remoteAddress());
          event.disallow(result.result(), PaperAdventure.asAdventure(result.message()));
          event.callEvent();
 +
